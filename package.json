@@ -1,0 +1,24 @@
+{
+  "name": "stylelint-config-clean-order",
+  "version": "0.0.0",
+  "description": "Order your styles with stylelint-order.",
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-order",
+    "property order"
+  ],
+  "repository": "github:kutsan/stylelint-config-clean-order",
+  "license": "MIT",
+  "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
+  "main": "src/index.js",
+  "files": [
+    "src/**/*.js"
+  ],
+  "dependencies": {
+    "stylelint-order": "^5.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">=14"
+  }
+}

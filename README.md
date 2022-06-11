@@ -1,5 +1,7 @@
 # `stylelint-config-clean-order`
 
+[![npm](https://img.shields.io/npm/v/stylelint-config-clean-order)](https://www.npmjs.com/package/stylelint-config-clean-order)
+
 Order your styles with stylelint-order.
 
 ## Usage

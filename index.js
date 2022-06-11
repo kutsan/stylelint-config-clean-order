@@ -1,6 +1,6 @@
 const { positioning } = require('./groups/positioning')
 const { layout } = require('./groups/layout')
-const { boxModel } = require('./groups/boxModel')
+const { boxModel } = require('./groups/box-model')
 const { apperance } = require('./groups/apperance')
 const { typography } = require('./groups/typography')
 const { interaction } = require('./groups/interaction')

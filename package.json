@@ -13,8 +13,7 @@
   "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
   "main": "index.js",
   "files": [
-    "index.js",
-    "groups/**/*.js"
+    "src/**/*.js"
   ],
   "dependencies": {
     "stylelint-order": "^5.0.0"

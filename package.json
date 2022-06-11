@@ -11,9 +11,10 @@
   "repository": "github:kutsan/stylelint-config-clean-order",
   "license": "MIT",
   "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
-  "main": "src/index.js",
+  "main": "index.js",
   "files": [
-    "src/**/*.js"
+    "index.js",
+    "groups/**/*.js"
   ],
   "dependencies": {
     "stylelint-order": "^5.0.0"

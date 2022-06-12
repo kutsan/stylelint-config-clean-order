@@ -1,6 +1,7 @@
 const layout = [
   'float',
   'clear',
+  'contain',
   'overflow',
   'overflow-x',
   'overflow-y',

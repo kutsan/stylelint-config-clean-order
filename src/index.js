@@ -57,16 +57,6 @@ const config = {
         hasBlock: true
       },
       'rules',
-      {
-        type: 'rule',
-        selector: /^&:[\w-]+/,
-        hasBlock: true
-      },
-      {
-        type: 'rule',
-        selector: /^&/,
-        hasBlock: true
-      },
       { type: 'at-rule', name: 'media', hasBlock: true }
     ],
     'order/properties-order': [

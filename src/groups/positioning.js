@@ -2,6 +2,10 @@ const positioning = [
   'isolation',
   'position',
   'z-index',
+  'top',
+  'right',
+  'bottom',
+  'left',
   'inset',
   'inset-block',
   'inset-block-start',
@@ -9,10 +13,6 @@ const positioning = [
   'inset-inline',
   'inset-inline-start',
   'inset-inline-end',
-  'top',
-  'right',
-  'bottom',
-  'left',
   'transform',
   'transform-origin'
 ]

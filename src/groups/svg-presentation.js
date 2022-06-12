@@ -34,7 +34,9 @@ const svgPresentation = [
   'marker-mid',
   'marker-end',
   'mask',
-  'shape-rendering'
+  'mask-type',
+  'shape-rendering',
+  'clip-rule'
 ]
 
 module.exports = { svgPresentation }

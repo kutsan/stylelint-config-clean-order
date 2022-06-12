@@ -1,10 +1,13 @@
 const layout = [
+  'direction',
+  'unicode-bidi',
   'float',
   'clear',
   'contain',
   'overflow',
   'overflow-x',
   'overflow-y',
+  'overflow-clip-margin',
   'overscroll-behavior',
   'overscroll-behavior-x',
   'overscroll-behavior-y',
@@ -14,6 +17,16 @@ const layout = [
   'table-layout',
   'border-spacing',
   'border-collapse',
+  'columns',
+  'column-count',
+  'column-width',
+  'column-fill',
+  'column-rule-color',
+  'column-rule-style',
+  'column-rule-width',
+  'column-span',
+  'widows',
+  'orphans',
   'grid',
   'grid-area',
   'grid-auto-columns',
@@ -32,8 +45,6 @@ const layout = [
   'grid-template-areas',
   'grid-template-columns',
   'grid-template-rows',
-  'clip',
-  'clip-path',
   'flex',
   'flex-flow',
   'flex-basis',
@@ -53,7 +64,10 @@ const layout = [
   'justify-content',
   'justify-items',
   'justify-self',
-  'order'
+  'order',
+  'break-inside',
+  'break-before',
+  'break-after'
 ]
 
 module.exports = { layout }

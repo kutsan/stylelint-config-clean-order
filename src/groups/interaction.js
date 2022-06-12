@@ -3,15 +3,15 @@ const interaction = [
   'touch-action',
   'will-change',
   'cursor',
-  'visibility',
-  'zoom',
   'caption-side',
   'content',
   'quotes',
-  'counter-reset',
+  'counter-set',
   'counter-increment',
+  'counter-reset',
   'resize',
   'user-select',
+  'overflow-anchor',
   'nav-index',
   'nav-up',
   'nav-right',
@@ -43,7 +43,15 @@ const interaction = [
   'scroll-padding-left',
   'scroll-snap-type',
   'scroll-snap-align',
-  'scroll-snap-stop'
+  'scroll-snap-stop',
+  'content-visibility',
+  'contain-intrinsic-size',
+  'contain-intrinsic-width',
+  'contain-intrinsic-height',
+  'contain-intrinsic-inline-size',
+  'contain-intrinsic-block-size',
+  'speak',
+  'speak-as'
 ]
 
 module.exports = { interaction }

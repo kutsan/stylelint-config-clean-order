@@ -12,7 +12,7 @@ const transition = [
   'animation-fill-mode',
   'animation-delay',
   'animation-iteration-count',
-  'animation-direction',
+  'animation-direction'
 ]
 
 module.exports = { transition }

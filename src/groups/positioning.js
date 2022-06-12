@@ -13,6 +13,7 @@ const positioning = [
   'inset-inline',
   'inset-inline-start',
   'inset-inline-end',
+  'zoom',
   'transform',
   'transform-origin'
 ]

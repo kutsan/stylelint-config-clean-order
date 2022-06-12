@@ -1,9 +1,15 @@
 const apperance = [
   'apperance',
+  'visibility',
+  'color-scheme',
   'accent-color',
+  'perspective',
+  'perspective-origin',
+  'backface-visibility',
   'opacity',
   'object-fit',
   'object-position',
+  'image-orientation',
   'background',
   'background-color',
   'background-image',
@@ -18,6 +24,8 @@ const apperance = [
   'background-origin',
   'background-size',
   'background-blend-mode',
+  'clip',
+  'clip-path',
   'filter',
   'backdrop-filter',
   'box-decoration-break',
@@ -86,7 +94,10 @@ const apperance = [
   'outline-width',
   'outline-offset',
   'box-shadow',
-  'mix-blend-mode'
+  'mix-blend-mode',
+  'caret-color',
+  'box-decoration-break',
+  '-webkit-box-decoration-break'
 ]
 
 module.exports = { apperance }

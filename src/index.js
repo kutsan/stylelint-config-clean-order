@@ -8,6 +8,7 @@ const { transition } = require('./groups/transition')
 const { svgPresentation } = require('./groups/svg-presentation')
 
 const propertyGroups = [
+  ['composes'],
   ['all'],
   interaction,
   positioning,

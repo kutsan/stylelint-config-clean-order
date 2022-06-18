@@ -1,3 +1,5 @@
+  <img width="100" height="100" src="https://user-images.githubusercontent.com/10108377/174442861-3a762dc7-5318-4c93-b881-24a8fbd6b09f.png" alt="Logo" />
+
 # `stylelint-config-clean-order`
 
 [![npm](https://img.shields.io/npm/v/stylelint-config-clean-order)](https://www.npmjs.com/package/stylelint-config-clean-order)

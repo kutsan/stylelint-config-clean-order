@@ -24,6 +24,7 @@ const svgPresentation = [
   'stroke-miterlimit',
   'stroke-opacity',
   'stroke-width',
+  'vector-effect',
   'color-interpolation',
   'color-interpolation-filters',
   'color-profile',

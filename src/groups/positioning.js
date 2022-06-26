@@ -15,7 +15,12 @@ const positioning = [
   'inset-inline-end',
   'zoom',
   'transform',
-  'transform-origin'
+  'transform-box',
+  'transform-style',
+  'transform-origin',
+  'offset-path',
+  'offset-distance',
+  'offset-rotate'
 ]
 
 module.exports = { positioning }

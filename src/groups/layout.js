@@ -1,4 +1,5 @@
 const layout = [
+  'size',
   'direction',
   'unicode-bidi',
   'float',
@@ -67,7 +68,10 @@ const layout = [
   'order',
   'break-inside',
   'break-before',
-  'break-after'
+  'break-after',
+  'shape-outside',
+  'shape-image-threshold',
+  'shape-margin'
 ]
 
 module.exports = { layout }

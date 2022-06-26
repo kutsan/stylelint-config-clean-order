@@ -2,6 +2,7 @@ const apperance = [
   'apperance',
   'visibility',
   'color-scheme',
+  'forced-color-adjust',
   'accent-color',
   'perspective',
   'perspective-origin',

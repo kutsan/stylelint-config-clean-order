@@ -69,6 +69,7 @@ const typography = [
   'white-space',
   'vertical-align',
   'paint-order',
+  'hanging-punctuation',
   'list-style',
   'list-style-position',
   'list-style-type',

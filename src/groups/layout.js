@@ -23,6 +23,7 @@ const layout = [
   'column-count',
   'column-width',
   'column-fill',
+  'column-rule',
   'column-rule-color',
   'column-rule-style',
   'column-rule-width',

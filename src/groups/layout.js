@@ -18,6 +18,7 @@ const layout = [
   'table-layout',
   'border-spacing',
   'border-collapse',
+  'empty-cells',
   'columns',
   'column-count',
   'column-width',

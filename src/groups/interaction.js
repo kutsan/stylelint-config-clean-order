@@ -18,6 +18,8 @@ const interaction = [
   'nav-down',
   'nav-left',
   'scroll-behavior',
+  'scrollbar-color',
+  'scrollbar-width',
   'scrollbar-gutter',
   'scroll-margin',
   'scroll-margin-block',

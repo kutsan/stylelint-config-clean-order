@@ -40,17 +40,24 @@ const config = {
         ]
       }
     ],
-    'at-rule-empty-line-before': 'always',
+    'at-rule-empty-line-before': [
+      'always',
+      {
+        ignore: ['first-nested', 'blockless-after-same-name-blockless']
+      }
+    ],
     'order/order': [
       { type: 'at-rule', name: 'import' },
-      { type: 'at-rule', name: 'extend' },
-      { type: 'at-rule', name: 'apply' },
-      { type: 'at-rule', name: 'include' },
-      { type: 'at-rule', name: 'mixin' },
-      { type: 'at-rule', name: 'add-mixin' },
+      { type: 'at-rule', name: 'forward' },
+      { type: 'at-rule', name: 'use' },
       'dollar-variables',
       'at-variables',
       'custom-properties',
+      { type: 'at-rule', name: 'custom-media' },
+      { type: 'at-rule', name: 'function' },
+      { type: 'at-rule', name: 'mixin' },
+      { type: 'at-rule', name: 'extend' },
+      { type: 'at-rule', name: 'include' },
       'declarations',
       {
         type: 'rule',

@@ -16,14 +16,17 @@
     "src/**/*.js"
   ],
   "scripts": {
+    "test": "stylelint --config ./src/index.js --max-warnings 0 -- ./test/test.css",
     "format": "npm run format:prettier",
-    "format:prettier": "prettier --write --list-different ."
+    "format:prettier": "prettier --write --list-different .",
+    "format:test": "stylelint --config ./src/index.js --fix -- ./test/test.css"
   },
   "dependencies": {
     "stylelint-order": "^5.0.0"
   },
   "devDependencies": {
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "stylelint": "^14.13.0"
   },
   "peerDependencies": {
     "stylelint": ">=14"

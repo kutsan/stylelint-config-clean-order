@@ -1,0 +1,69 @@
+@custom-media --motion-ok (prefers-reduced-motion: no-preference);
+@custom-media --motion-not-ok (prefers-reduced-motion: reduce);
+
+:root {
+  --light-primary: coral;
+  --light-background: white;
+  --light-foreground: black;
+  --dark-primary: goldenrod;
+  --dark-background: black;
+  --dark-foreground: white;
+
+  /* Font */
+  --font-family: 'Poppins', sans-serif;
+
+  /* Spacing */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+
+  /* Radius */
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 32px;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+body.theme-light {
+  color: var(--light-foreground);
+
+  background-color: var(--light-background);
+}
+
+body.theme-dark {
+  color: var(--dark-foreground);
+
+  background-color: var(--dark-background);
+}
+
+.alert {
+  padding: var(--spacing-small);
+
+  border-radius: var(--radius-small);
+}
+
+.alert-success {
+  background-color: #bfb;
+  border: 1px solid #4f4;
+}
+
+.alert-error {
+  background-color: #fbb;
+  border: 1px solid #f44;
+}
+
+.product-list {
+  --icon-size: 14px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 1024px) {
+  .product-list {
+    grid-template-columns: repeat(1fr, 4);
+  }
+}

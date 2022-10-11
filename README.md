@@ -3,6 +3,7 @@
 # stylelint-config-clean-order
 
 [![npm](https://img.shields.io/npm/v/stylelint-config-clean-order)](https://www.npmjs.com/package/stylelint-config-clean-order)
+[![test](https://github.com/kutsan/stylelint-config-clean-order/actions/workflows/test.yml/badge.svg)](https://github.com/kutsan/stylelint-config-clean-order/actions/workflows/test.yml)
 
 Order your styles with [stylelint-order](https://github.com/hudochenkov/stylelint-order).
 

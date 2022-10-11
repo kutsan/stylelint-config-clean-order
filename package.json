@@ -15,8 +15,15 @@
   "files": [
     "src/**/*.js"
   ],
+  "scripts": {
+    "format": "npm run format:prettier",
+    "format:prettier": "prettier --write --list-different ."
+  },
   "dependencies": {
     "stylelint-order": "^5.0.0"
+  },
+  "devDependencies": {
+    "husky": "^8.0.1"
   },
   "peerDependencies": {
     "stylelint": ">=14"

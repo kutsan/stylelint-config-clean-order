@@ -22,7 +22,7 @@ const propertyGroups = [
 
 const propertiesOrder = propertyGroups.map((properties) => ({
   noEmptyLineBetween: true,
-  emptyLineBefore: 'always',
+  emptyLineBefore: 'threshold',
   properties
 }))
 
@@ -75,9 +75,10 @@ const config = {
     'order/properties-order': [
       propertiesOrder,
       {
+        severity: 'warning',
         unspecified: 'bottomAlphabetical',
         emptyLineBeforeUnspecified: 'always',
-        severity: 'warning'
+        emptyLineMinimumPropertyThreshold: 5
       }
     ]
   }

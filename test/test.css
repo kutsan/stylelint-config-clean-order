@@ -29,19 +29,16 @@ body {
 
 body.theme-light {
   color: var(--light-foreground);
-
   background-color: var(--light-background);
 }
 
 body.theme-dark {
   color: var(--dark-foreground);
-
   background-color: var(--dark-background);
 }
 
 .alert {
   padding: var(--spacing-small);
-
   border-radius: var(--radius-small);
 }
 

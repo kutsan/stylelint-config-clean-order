@@ -43,7 +43,11 @@ const config = {
     'at-rule-empty-line-before': [
       'always',
       {
-        ignore: ['first-nested', 'blockless-after-same-name-blockless']
+        ignore: [
+          'first-nested',
+          'blockless-after-same-name-blockless',
+          'after-comment'
+        ]
       }
     ],
     'order/order': [

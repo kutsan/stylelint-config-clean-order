@@ -1,4 +1,7 @@
 const layout = [
+  'container',
+  'container-name',
+  'container-type',
   'size',
   'direction',
   'unicode-bidi',

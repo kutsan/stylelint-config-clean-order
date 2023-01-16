@@ -1,7 +1,7 @@
 const { positioning } = require('./groups/positioning')
 const { layout } = require('./groups/layout')
 const { boxModel } = require('./groups/box-model')
-const { apperance } = require('./groups/apperance')
+const { appearance } = require('./groups/appearance')
 const { typography } = require('./groups/typography')
 const { interaction } = require('./groups/interaction')
 const { transition } = require('./groups/transition')
@@ -15,7 +15,7 @@ const propertyGroups = [
   layout,
   boxModel,
   typography,
-  apperance,
+  appearance,
   svgPresentation,
   transition
 ]

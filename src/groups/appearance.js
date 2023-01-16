@@ -1,5 +1,5 @@
-const apperance = [
-  'apperance',
+const appearance = [
+  'appearance',
   'visibility',
   'color-scheme',
   'forced-color-adjust',
@@ -101,4 +101,4 @@ const apperance = [
   '-webkit-box-decoration-break'
 ]
 
-module.exports = { apperance }
+module.exports = { appearance }

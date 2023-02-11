@@ -22,11 +22,11 @@
     "format:test": "stylelint --config ./src/index.js --fix -- ./test/test.css"
   },
   "dependencies": {
-    "stylelint-order": "^5.0.0"
+    "stylelint-order": "^6.0.2"
   },
   "devDependencies": {
-    "husky": "^8.0.1",
-    "stylelint": "^14.13.0"
+    "husky": "^8.0.3",
+    "stylelint": "^15.1.0"
   },
   "peerDependencies": {
     "stylelint": ">=14"

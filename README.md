@@ -29,18 +29,6 @@ Configure your stylelint configuration file (`.stylelintrc.json`) to extend this
 }
 ```
 
-## Usage with `stylelint-config-prettier`
-
-If you're using one of the Prettier config packages (`stylelint-config-prettier` or `stylelint-config-prettier-scss`) to turn-off rules that might conflict with Prettier, the general advice is to put the prettier config to last, so it can override other configs before it. But, `stylelint-config-clean-order` also overrides two rules that Prettier config packages override (`declaration-empty-line-before` and `at-rule-empty-line-before`) to improve the final formatted result. `stylelint-config-clean-order` doesn't override rules other than these two.
-
-If you want these rules to put into effect, add `stylelint-config-clean-order` just after `stylelint-config-prettier` packages, so it can take-over Prettier overrides.
-
-```json
-{
-  "extends": ["stylelint-config-prettier", "stylelint-config-clean-order"]
-}
-```
-
 ## About orders
 
 I try to hand-pick style orders in the most logical way to improve process of CSS refactoring; for example `font-size` before `line-height`, `display` before `align-items`. If you think order of a rule doesn't make sense, please open an issue so we can discuss. Thanks!

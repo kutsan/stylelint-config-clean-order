@@ -29,6 +29,12 @@ Configure your stylelint configuration file (`.stylelintrc.json`) to extend this
 }
 ```
 
+## Extra empty lines for formatting
+
+In addition to `stylelint-order` plugin, this package also overrides two rules (`declaration-empty-line-before` and `at-rule-empty-line-before`) to improve the final formatted result by adding extra empty lines between declarations. `stylelint-config-clean-order` does not override a rule other than these two.
+
+If you want these rules to put into effect, make sure config packages after `stylelint-config-clean-order` do not override them.
+
 ## About orders
 
 I try to hand-pick style orders in the most logical way to improve process of CSS refactoring; for example `font-size` before `line-height`, `display` before `align-items`. If you think order of a rule doesn't make sense, please open an issue so we can discuss. Thanks!

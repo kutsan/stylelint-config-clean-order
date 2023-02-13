@@ -37,7 +37,8 @@ const config = {
           'after-declaration',
           'after-comment',
           'inside-single-line-block'
-        ]
+        ],
+        severity: 'warning'
       }
     ],
     'at-rule-empty-line-before': [
@@ -47,7 +48,8 @@ const config = {
           'first-nested',
           'blockless-after-same-name-blockless',
           'after-comment'
-        ]
+        ],
+        severity: 'warning'
       }
     ],
     'order/order': [

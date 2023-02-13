@@ -29,6 +29,27 @@ const propertiesOrder = propertyGroups.map((properties) => ({
 const config = {
   plugins: ['stylelint-order'],
   rules: {
+    'declaration-empty-line-before': [
+      'always',
+      {
+        except: ['first-nested'],
+        ignore: [
+          'after-declaration',
+          'after-comment',
+          'inside-single-line-block'
+        ]
+      }
+    ],
+    'at-rule-empty-line-before': [
+      'always',
+      {
+        ignore: [
+          'first-nested',
+          'blockless-after-same-name-blockless',
+          'after-comment'
+        ]
+      }
+    ],
     'order/order': [
       [
         { type: 'at-rule', name: 'import' },

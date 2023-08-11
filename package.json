@@ -10,7 +10,7 @@
   ],
   "repository": "github:kutsan/stylelint-config-clean-order",
   "license": "MIT",
-  "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
+  "author": "Kutsan Kaplan <me@kutsan.dev> (https://kutsan.dev)",
   "main": "./warning.js",
   "files": [
     "src/**/*.js",

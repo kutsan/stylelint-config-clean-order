@@ -29,6 +29,16 @@ Configure your stylelint configuration file (`.stylelintrc.json`) to extend this
 }
 ```
 
+## Severity Options
+
+Default severity level is `warning` but you can use error variant to change severity level to `error`.
+
+```json
+{
+  "extends": ["stylelint-config-clean-order/error"]
+}
+```
+
 ## Extra empty lines for formatting
 
 In addition to `stylelint-order` plugin, this package also overrides two rules (`declaration-empty-line-before` and `at-rule-empty-line-before`) to improve the final formatted result by adding extra empty lines between declarations. `stylelint-config-clean-order` does not override a rule other than these two.

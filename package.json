@@ -11,9 +11,11 @@
   "repository": "github:kutsan/stylelint-config-clean-order",
   "license": "MIT",
   "author": "Kutsan Kaplan <me@kutsankaplan.com> (https://kutsankaplan.com)",
-  "main": "src/index.js",
+  "main": "./warning.js",
   "files": [
-    "src/**/*.js"
+    "src/**/*.js",
+    "warning.js",
+    "error.js"
   ],
   "scripts": {
     "test": "stylelint --config ./src/index.js --max-warnings 0 -- ./test/test.css",

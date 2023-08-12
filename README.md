@@ -39,6 +39,35 @@ Default severity level is `warning` but you can use error variant to change seve
 }
 ```
 
+## Customization
+
+You can import raw property groups to add or override rule options. Please refer to [stylelint-order](https://github.com/hudochenkov/stylelint-order) plugin documentation.
+
+For example, you can override `'properties-order'` rule to not have empty lines between groups:
+
+```javascript
+const { propertyGroups } = require('stylelint-config-clean-order')
+
+const propertiesOrder = propertyGroups.map((properties) => ({
+  noEmptyLineBetween: true,
+  emptyLineBefore: 'never', // Don't add empty lines between order groups.
+  properties
+}))
+
+module.exports = {
+  extends: ['stylelint-config-clean-order'],
+  rules: {
+    'order/properties-order': [
+      propertiesOrder,
+      {
+        severity: 'warning',
+        unspecified: 'bottomAlphabetical',
+      }
+    ]
+  }
+}
+```
+
 ## Extra empty lines for formatting
 
 In addition to `stylelint-order` plugin, this package also overrides two rules (`declaration-empty-line-before` and `at-rule-empty-line-before`) to improve the final formatted result by adding extra empty lines between declarations. `stylelint-config-clean-order` does not override a rule other than these two.

@@ -92,4 +92,7 @@ function getConfig({ severity }) {
   }
 }
 
-module.exports = { getConfig }
+module.exports = {
+  getConfig,
+  propertyGroups,
+}

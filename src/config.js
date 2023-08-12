@@ -94,5 +94,5 @@ function getConfig({ severity }) {
 
 module.exports = {
   getConfig,
-  propertyGroups,
+  propertyGroups
 }

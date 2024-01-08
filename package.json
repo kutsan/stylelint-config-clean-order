@@ -24,7 +24,7 @@
     "format:test": "stylelint --config ./warning.js --fix -- ./test/test.css"
   },
   "dependencies": {
-    "stylelint-order": "^6.0.2"
+    "stylelint-order": "^6.0.4"
   },
   "devDependencies": {
     "husky": "^8.0.3",

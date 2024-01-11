@@ -12,7 +12,16 @@ const transition = [
   'animation-fill-mode',
   'animation-delay',
   'animation-iteration-count',
-  'animation-direction'
+  'animation-direction',
+  'animation-timeline',
+  'timeline-scope',
+  'scroll-timeline-name',
+  'scroll-timeline-axis',
+  'scroll-timeline',
+  'view-timeline-name',
+  'view-timeline-axis',
+  'view-timeline',
+  'view-timeline-inset',
 ]
 
 module.exports = { transition }

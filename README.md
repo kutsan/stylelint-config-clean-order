@@ -21,7 +21,8 @@ npm install stylelint stylelint-config-clean-order --save-dev
 
 Configure your stylelint configuration file (`.stylelintrc.json`) to extend this package:
 
-> ⚠️ You don't need to install `stylelint-order` nor add `stylelint-order` to `"plugins"` since this package already does that for you.
+> [!TIP]
+> You don't need to install `stylelint-order` nor add `stylelint-order` to `"plugins"` since this package already does that for you.
 
 ```json
 {

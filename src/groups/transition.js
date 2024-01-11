@@ -15,13 +15,14 @@ const transition = [
   'animation-direction',
   'animation-timeline',
   'timeline-scope',
+  'scroll-timeline',
   'scroll-timeline-name',
   'scroll-timeline-axis',
-  'scroll-timeline',
+  'view-timeline',
   'view-timeline-name',
   'view-timeline-axis',
-  'view-timeline',
   'view-timeline-inset',
+  'view-transition-name'
 ]
 
 module.exports = { transition }

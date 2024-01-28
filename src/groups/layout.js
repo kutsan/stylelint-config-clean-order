@@ -60,6 +60,7 @@ const layout = [
   'flex-grow',
   'flex-shrink',
   'flex-wrap',
+  'box-orient',
   'gap',
   'row-gap',
   'column-gap',

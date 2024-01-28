@@ -11,6 +11,8 @@ const layout = [
   'overflow',
   'overflow-x',
   'overflow-y',
+  'overflow-block',
+  'overflow-inline',
   'overflow-clip-margin',
   'overscroll-behavior',
   'overscroll-behavior-x',

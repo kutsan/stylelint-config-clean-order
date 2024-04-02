@@ -23,6 +23,7 @@ const typography = [
   'font-emphasize',
   'font-emphasize-position',
   'font-emphasize-style',
+  'font-smoothing',
   '-webkit-font-smoothing',
   '-moz-osx-font-smoothing',
   'font-smooth',

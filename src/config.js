@@ -65,7 +65,6 @@ function getConfig({ severity }) {
           { type: 'at-rule', name: 'function' },
           { type: 'at-rule', name: 'mixin' },
           { type: 'at-rule', name: 'extend' },
-          { type: 'at-rule', name: 'include' },
           'declarations',
           {
             type: 'rule',

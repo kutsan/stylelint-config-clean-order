@@ -61,6 +61,7 @@ const layout = [
   'flex-shrink',
   'flex-wrap',
   'box-orient',
+  'line-clamp',
   'gap',
   'row-gap',
   'column-gap',

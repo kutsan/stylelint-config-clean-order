@@ -29,6 +29,7 @@ const appearance = [
   'clip-path',
   'filter',
   'backdrop-filter',
+  '-webkit-box-decoration-break',
   'box-decoration-break',
   'border',
   'border-color',
@@ -96,9 +97,7 @@ const appearance = [
   'outline-offset',
   'box-shadow',
   'mix-blend-mode',
-  'caret-color',
-  'box-decoration-break',
-  '-webkit-box-decoration-break'
+  'caret-color'
 ]
 
 module.exports = { appearance }

@@ -43,13 +43,13 @@ body.theme-dark {
 }
 
 .alert-success {
-  background-color: #bfb;
   border: 1px solid #4f4;
+  background-color: #bfb;
 }
 
 .alert-error {
-  background-color: #fbb;
   border: 1px solid #f44;
+  background-color: #fbb;
 }
 
 .product-list {

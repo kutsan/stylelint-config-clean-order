@@ -19,6 +19,7 @@ export const layout: Array<
   'float',
   'clear',
   'contain',
+  'overlay',
   'overflow',
   'overflow-x',
   'overflow-y',

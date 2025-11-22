@@ -26,4 +26,12 @@ export const positioning: Array<keyof CSS.StandardPropertiesHyphen> = [
   'offset-path',
   'offset-distance',
   'offset-rotate',
+  'anchor-name',
+  'anchor-scope',
+  'position-anchor',
+  'position-area',
+  'position-visibility',
+  'position-try',
+  'position-try-order',
+  'position-try-fallbacks',
 ]

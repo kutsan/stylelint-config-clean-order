@@ -37,4 +37,5 @@ export const appearance: Array<keyof CSS.StandardPropertiesHyphen> = [
   'box-shadow',
   'mix-blend-mode',
   'caret-color',
+  'print-color-adjust',
 ]

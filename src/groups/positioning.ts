@@ -1,4 +1,6 @@
-const positioning = [
+import type * as CSS from 'csstype'
+
+export const positioning: Array<keyof CSS.StandardPropertiesHyphen> = [
   'isolation',
   'position',
   'z-index',
@@ -23,7 +25,5 @@ const positioning = [
   'scale',
   'offset-path',
   'offset-distance',
-  'offset-rotate'
+  'offset-rotate',
 ]
-
-module.exports = { positioning }

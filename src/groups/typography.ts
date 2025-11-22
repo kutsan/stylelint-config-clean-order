@@ -1,4 +1,6 @@
-const typography = [
+import type * as CSS from 'csstype'
+
+export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
   'writing-mode',
   'font',
   'font-family',
@@ -8,7 +10,6 @@ const typography = [
   'font-optical-sizing',
   'font-weight',
   'font-style',
-  'font-display',
   'font-kerning',
   'font-variant',
   'font-variant-ligatures',
@@ -18,14 +19,6 @@ const typography = [
   'font-variant-east-asian',
   'font-variant-position',
   'font-size-adjust',
-  'font-stretch',
-  'font-effect',
-  'font-emphasize',
-  'font-emphasize-position',
-  'font-emphasize-style',
-  'font-smoothing',
-  '-webkit-font-smoothing',
-  '-moz-osx-font-smoothing',
   'font-smooth',
   'ruby-position',
   'line-height',
@@ -47,10 +40,7 @@ const typography = [
   'text-underline-offset',
   'text-indent',
   'text-justify',
-  'text-outline',
   'text-overflow',
-  'text-overflow-ellipsis',
-  'text-overflow-mode',
   'text-shadow',
   'text-transform',
   'text-wrap',
@@ -58,8 +48,7 @@ const typography = [
   'text-combine-upright',
   'text-orientation',
   'text-rendering',
-  '-webkit-text-fill-color',
-  '-webkit-text-stroke-color',
+  'stroke-color',
   'letter-spacing',
   'word-break',
   'word-spacing',
@@ -75,11 +64,4 @@ const typography = [
   'list-style-position',
   'list-style-type',
   'list-style-image',
-  'src',
-  'unicode-range',
-  'ascent-override',
-  'descent-override',
-  'line-gap-override'
 ]
-
-module.exports = { typography }

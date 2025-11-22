@@ -1,4 +1,6 @@
-const boxModel = [
+import type * as CSS from 'csstype'
+
+export const boxModel: Array<keyof CSS.StandardPropertiesHyphen> = [
   'box-sizing',
   'aspect-ratio',
   'width',
@@ -93,7 +95,5 @@ const boxModel = [
   'border-image-slice',
   'border-image-width',
   'border-image-outset',
-  'border-image-repeat'
+  'border-image-repeat',
 ]
-
-module.exports = { boxModel }

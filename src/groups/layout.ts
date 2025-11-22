@@ -1,4 +1,15 @@
-const layout = [
+import type * as CSS from 'csstype'
+
+type UnknownLayoutProperties =
+  | 'size'
+  | 'box-orient'
+  | 'grid-column-gap'
+  | 'grid-gap'
+  | 'grid-row-gap'
+
+export const layout: Array<
+  keyof CSS.StandardPropertiesHyphen | UnknownLayoutProperties
+> = [
   'container',
   'container-name',
   'container-type',
@@ -80,7 +91,5 @@ const layout = [
   'break-after',
   'shape-outside',
   'shape-image-threshold',
-  'shape-margin'
+  'shape-margin',
 ]
-
-module.exports = { layout }

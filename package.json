@@ -35,7 +35,8 @@
     "check:types": "tsc",
     "clean": "rimraf ./dist",
     "format": "prettier --write --list-different .",
-    "prepare": "node scripts/install-husky.ts"
+    "prepare": "node scripts/install-husky.ts",
+    "test": "vitest"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
@@ -52,7 +53,9 @@
     "prettier": "^3.6.2",
     "prettier-plugin-packagejson": "^2.5.19",
     "rimraf": "^6.1.2",
-    "stylelint": "^16.26.0"
+    "stylelint": "^16.26.0",
+    "stylelint-order": "^7.0.0",
+    "vitest": "^4.0.13"
   },
   "peerDependencies": {
     "stylelint": ">=16",

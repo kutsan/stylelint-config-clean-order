@@ -1,4 +1,10 @@
-const interaction = [
+import type * as CSS from 'csstype'
+
+type UnknownInteractionProperties = 'speak'
+
+export const interaction: Array<
+  keyof CSS.StandardPropertiesHyphen | UnknownInteractionProperties
+> = [
   'pointer-events',
   'touch-action',
   'will-change',
@@ -12,11 +18,6 @@ const interaction = [
   'resize',
   'user-select',
   'overflow-anchor',
-  'nav-index',
-  'nav-up',
-  'nav-right',
-  'nav-down',
-  'nav-left',
   'scroll-behavior',
   'scrollbar-color',
   'scrollbar-width',
@@ -53,7 +54,5 @@ const interaction = [
   'contain-intrinsic-inline-size',
   'contain-intrinsic-block-size',
   'speak',
-  'speak-as'
+  'speak-as',
 ]
-
-module.exports = { interaction }

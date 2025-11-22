@@ -1,2 +1,8 @@
+# Dependencies
 node_modules
+
+# Operating System Files & Miscellaneous
 .DS_Store
+
+# Build outputs
+dist

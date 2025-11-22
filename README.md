@@ -1,4 +1,4 @@
-<img width="100" src="https://github.com/kutsan/stylelint-config-clean-order/raw/master/.github/assets/logo.png" alt="Logo" />
+<img width="100" src=".github/assets/logo.png" alt="Logo" />
 
 # stylelint-config-clean-order
 
@@ -13,22 +13,22 @@ Order your styles with [stylelint-order](https://github.com/hudochenkov/stylelin
 
 ## Usage
 
-Install [`stylelint`](https://github.com/stylelint/stylelint) and this package to your project:
+Install [`stylelint`](https://github.com/stylelint/stylelint), this config package and its `stylelint-order` peer dependency to your project:
 
 ```sh
-npm install stylelint stylelint-config-clean-order --save-dev
+npm add --save-dev stylelint stylelint-order stylelint-config-clean-order
 ```
 
-Configure your stylelint configuration file (`.stylelintrc.json`) to extend this package:
+Configure your stylelint configuration file (`stylelint.config.js`) to extend this package:
 
-> [!TIP]
-> You don't need to install `stylelint-order` nor add `stylelint-order` to `"plugins"` since this package already does that for you.
-
-```json
-{
-  "extends": ["stylelint-config-clean-order"]
+```js
+/** @type {import('stylelint').Config} */
+export default {
+  extends: ['stylelint-config-clean-order'],
 }
 ```
+
+That's it! Now your styles will be ordered! You can use `stylelint --fix` command to automatically fix order issues.
 
 ## Severity Options
 
@@ -47,15 +47,16 @@ You can import raw property groups to add or override rule options. Please refer
 For example, you can override `'properties-order'` rule to not have empty lines between groups:
 
 ```javascript
-const { propertyGroups } = require('stylelint-config-clean-order')
+import { propertyGroups } from 'stylelint-config-clean-order'
 
 const propertiesOrder = propertyGroups.map((properties) => ({
   noEmptyLineBetween: true,
   emptyLineBefore: 'never', // Don't add empty lines between order groups.
-  properties
+  properties,
 }))
 
-module.exports = {
+/** @type {import('stylelint').Config} */
+export default {
   extends: ['stylelint-config-clean-order'],
   rules: {
     'order/properties-order': [
@@ -63,9 +64,9 @@ module.exports = {
       {
         severity: 'warning',
         unspecified: 'bottomAlphabetical',
-      }
-    ]
-  }
+      },
+    ],
+  },
 }
 ```
 

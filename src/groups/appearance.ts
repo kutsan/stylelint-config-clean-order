@@ -1,4 +1,6 @@
-const appearance = [
+import type * as CSS from 'csstype'
+
+export const appearance: Array<keyof CSS.StandardPropertiesHyphen> = [
   'appearance',
   'visibility',
   'color-scheme',
@@ -15,8 +17,6 @@ const appearance = [
   'background-color',
   'background-image',
   'background-repeat',
-  'background-repeat-x',
-  'background-repeat-y',
   'background-attachment',
   'background-position',
   'background-position-x',
@@ -25,11 +25,9 @@ const appearance = [
   'background-origin',
   'background-size',
   'background-blend-mode',
-  'clip',
   'clip-path',
   'filter',
   'backdrop-filter',
-  '-webkit-box-decoration-break',
   'box-decoration-break',
   'outline',
   'outline-color',
@@ -38,7 +36,5 @@ const appearance = [
   'outline-offset',
   'box-shadow',
   'mix-blend-mode',
-  'caret-color'
+  'caret-color',
 ]
-
-module.exports = { appearance }

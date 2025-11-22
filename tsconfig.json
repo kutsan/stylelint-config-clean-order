@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@kutsan/typescript-config/node.json",
+  "include": ["**/*.ts", "**/*.js"]
+}

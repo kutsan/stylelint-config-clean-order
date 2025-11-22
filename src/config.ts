@@ -1,13 +1,13 @@
-const { positioning } = require('./groups/positioning')
-const { layout } = require('./groups/layout')
-const { boxModel } = require('./groups/box-model')
-const { appearance } = require('./groups/appearance')
-const { typography } = require('./groups/typography')
-const { interaction } = require('./groups/interaction')
-const { transition } = require('./groups/transition')
-const { svgPresentation } = require('./groups/svg-presentation')
+import { appearance } from './groups/appearance.ts'
+import { boxModel } from './groups/box-model.ts'
+import { interaction } from './groups/interaction.ts'
+import { layout } from './groups/layout.ts'
+import { positioning } from './groups/positioning.ts'
+import { svgPresentation } from './groups/svg-presentation.ts'
+import { transition } from './groups/transition.ts'
+import { typography } from './groups/typography.ts'
 
-const propertyGroups = [
+export const propertyGroups = [
   ['composes'],
   ['all'],
   interaction,
@@ -17,16 +17,19 @@ const propertyGroups = [
   typography,
   appearance,
   svgPresentation,
-  transition
+  transition,
 ]
 
 const propertiesOrder = propertyGroups.map((properties) => ({
   noEmptyLineBetween: true,
   emptyLineBefore: 'threshold',
-  properties
+  properties,
 }))
 
-function getConfig({ severity }) {
+const EMPTY_LINE_MINIMUM_PROPERTY_THRESHOLD = 5
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- Let return type be inferred.
+export function getConfig({ severity }: { severity: 'error' | 'warning' }) {
   return {
     plugins: ['stylelint-order'],
     rules: {
@@ -37,10 +40,10 @@ function getConfig({ severity }) {
           ignore: [
             'after-declaration',
             'after-comment',
-            'inside-single-line-block'
+            'inside-single-line-block',
           ],
-          severity
-        }
+          severity,
+        },
       ],
       'at-rule-empty-line-before': [
         'always',
@@ -48,10 +51,10 @@ function getConfig({ severity }) {
           ignore: [
             'first-nested',
             'blockless-after-same-name-blockless',
-            'after-comment'
+            'after-comment',
           ],
-          severity
-        }
+          severity,
+        },
       ],
       'order/order': [
         [
@@ -69,14 +72,14 @@ function getConfig({ severity }) {
           {
             type: 'rule',
             selector: /^&::[\w-]+/,
-            hasBlock: true
+            hasBlock: true,
           },
           'rules',
-          { type: 'at-rule', name: 'media', hasBlock: true }
+          { type: 'at-rule', name: 'media', hasBlock: true },
         ],
         {
-          severity
-        }
+          severity,
+        },
       ],
       'order/properties-order': [
         propertiesOrder,
@@ -84,14 +87,10 @@ function getConfig({ severity }) {
           severity,
           unspecified: 'bottomAlphabetical',
           emptyLineBeforeUnspecified: 'always',
-          emptyLineMinimumPropertyThreshold: 5
-        }
-      ]
-    }
+          emptyLineMinimumPropertyThreshold:
+            EMPTY_LINE_MINIMUM_PROPERTY_THRESHOLD,
+        },
+      ],
+    },
   }
-}
-
-module.exports = {
-  getConfig,
-  propertyGroups
 }

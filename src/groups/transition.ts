@@ -1,4 +1,6 @@
-const transition = [
+import type * as CSS from 'csstype'
+
+export const transition: Array<keyof CSS.StandardPropertiesHyphen> = [
   'transition',
   'transition-delay',
   'transition-timing-function',
@@ -22,7 +24,5 @@ const transition = [
   'view-timeline-name',
   'view-timeline-axis',
   'view-timeline-inset',
-  'view-transition-name'
+  'view-transition-name',
 ]
-
-module.exports = { transition }

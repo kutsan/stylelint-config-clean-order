@@ -6,31 +6,60 @@
     "stylelint",
     "stylelint-config",
     "stylelint-order",
-    "property order"
+    "property order",
+    "css order"
   ],
   "repository": "github:kutsan/stylelint-config-clean-order",
   "license": "MIT",
   "author": "Kutsan Kaplan <me@kutsan.dev> (https://kutsan.dev)",
-  "main": "./warning.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./error": {
+      "types": "./dist/error.d.ts",
+      "import": "./dist/error.js"
+    }
+  },
   "files": [
-    "src/**/*.js",
-    "warning.js",
-    "error.js"
+    "dist"
   ],
   "scripts": {
-    "test": "stylelint --config ./warning.js --max-warnings 0 -- ./test/test.css",
-    "format": "npm run format:prettier",
-    "format:prettier": "prettier --write --list-different .",
-    "format:test": "stylelint --config ./warning.js --fix -- ./test/test.css"
-  },
-  "dependencies": {
-    "stylelint-order": "^6.0.4"
+    "prebuild": "pnpm run clean",
+    "build": "tsc --project tsconfig.build.json",
+    "check": "pnpm run check:lint && pnpm run check:types && pnpm run check:format",
+    "check:format": "prettier --ignore-path .gitignore --check .",
+    "check:lint": "eslint --max-warnings=0",
+    "check:types": "tsc",
+    "clean": "rimraf ./dist",
+    "format": "prettier --write --list-different .",
+    "prepare": "node scripts/install-husky.ts"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
-    "stylelint": "^15.1.0"
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@kutsan/eslint-config": "^1.4.0",
+    "@kutsan/prettier-config": "^1.1.0",
+    "@kutsan/typescript-config": "^1.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.0",
+    "@types/node": "^24.10.1",
+    "csstype": "^3.2.3",
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.6.2",
+    "prettier-plugin-packagejson": "^2.5.19",
+    "rimraf": "^6.1.2",
+    "stylelint": "^16.26.0"
   },
   "peerDependencies": {
-    "stylelint": ">=14"
+    "stylelint": ">=16",
+    "stylelint-order": ">=6"
+  },
+  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
+  "devEngines": {
+    "node": ">=24"
   }
 }

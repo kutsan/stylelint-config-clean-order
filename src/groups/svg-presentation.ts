@@ -1,4 +1,6 @@
-const svgPresentation = [
+import type * as CSS from 'csstype'
+
+export const svgPresentation: Array<keyof CSS.PropertiesHyphen> = [
   'alignment-baseline',
   'baseline-shift',
   'dominant-baseline',
@@ -27,7 +29,6 @@ const svgPresentation = [
   'vector-effect',
   'color-interpolation',
   'color-interpolation-filters',
-  'color-profile',
   'color-rendering',
   'image-rendering',
   'lighting-color',
@@ -37,7 +38,5 @@ const svgPresentation = [
   'mask',
   'mask-type',
   'shape-rendering',
-  'clip-rule'
+  'clip-rule',
 ]
-
-module.exports = { svgPresentation }

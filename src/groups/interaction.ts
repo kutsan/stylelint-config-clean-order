@@ -9,6 +9,7 @@ export const interaction: Array<
   'touch-action',
   'will-change',
   'cursor',
+  'caret-shape',
   'caption-side',
   'content',
   'quotes',

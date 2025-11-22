@@ -2,6 +2,8 @@ import type * as CSS from 'csstype'
 
 export const boxModel: Array<keyof CSS.StandardPropertiesHyphen> = [
   'box-sizing',
+  'field-sizing',
+  'interpolate-size',
   'aspect-ratio',
   'width',
   'inline-size',

@@ -1,6 +1,9 @@
 name: CI
 
 on:
+  push:
+    branches:
+      - 'master'
   pull_request:
     branches:
       - '*'
@@ -10,10 +13,43 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test:
+  set-environment:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    outputs:
+      environment: ${{ steps.set-environment.outputs.environment }}
+    steps:
+      - name: Set Environment
+        id: set-environment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const isPush = context.eventName === 'push'
+            const isMain = context.ref === 'refs/heads/master'
+
+            let environment = 'preview'
+
+            if (isPush && isMain) {
+              environment = 'production'
+            }
+
+            console.log(`Environment resolved to "${environment}".`)
+            core.setOutput('environment', environment)
+
+  checks:
+    runs-on: ubuntu-latest
+    needs: [set-environment]
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Run tests
+            command: test
+          - name: Lint code
+            command: check:lint
+          - name: Check types
+            command: check:types
+          - name: Check formatting
+            command: check:format
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,7 +58,7 @@ jobs:
         uses: pnpm/action-setup@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
           cache: 'pnpm'
@@ -30,13 +66,18 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run tests
-        run: pnpm run test
+      - name: ${{ matrix.name }}
+        run: pnpm run ${{ matrix.command }}
 
-  check-lint:
+  build:
+    needs: [set-environment, checks]
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    if: ${{ needs.set-environment.outputs.environment == 'production' }}
+    environment:
+      name: ${{ needs.set-environment.outputs.environment }}
+    outputs:
+      artifact-name: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      build-output-pathname: ${{ steps.set-build-output-pathname.outputs.build-output-pathname }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -44,60 +85,81 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
-      - name: Set up Node.js
+      - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version-file: package.json
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint code
-        run: pnpm run check:lint
+      - name: Set artifact name
+        id: set-artifact-name
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const shortSha = github['sha'].substring(0, 7)
+            const artifactName = `build-${shortSha}`
 
-  check-types:
+            core.setOutput('artifact-name', artifactName)
+
+      - name: Build
+        run: |
+          pnpm run build
+
+      - name: Set build output pathname
+        id: set-build-output-pathname
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const buildOutputPathname = 'dist'
+            core.setOutput('build-output-pathname', buildOutputPathname)
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.set-artifact-name.outputs.artifact-name }}
+          path: ${{ github.workspace }}/${{ steps.set-build-output-pathname.outputs.build-output-pathname }}/
+
+  release:
+    needs: [set-environment, checks, build]
     runs-on: ubuntu-latest
+    if: ${{ needs.set-environment.outputs.environment == 'production' }}
+    environment:
+      name: ${{ needs.set-environment.outputs.environment }}
     permissions:
-      contents: read
+      id-token: write # To enable use of OIDC for npm provenance.
+      contents: write # To be able to publish a GitHub release.
+      issues: write # To be able to comment on released issues.
+      pull-requests: write # To be able to comment on released pull requests.
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.artifact-name }}
+          path: ${{ needs.build.outputs.build-output-pathname }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 'lts/*'
-          cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Update npm
+        run: |
+          npm install --global npm@latest
 
-      - name: Check types
-        run: pnpm run check:types
+      - name: Verify npm package signatures
+        run: |
+          npm audit signatures
 
-  check-format:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 'lts/*'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Check formatting
-        run: pnpm run check:format
+      - name: Publish to npm
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm exec -- semantic-release

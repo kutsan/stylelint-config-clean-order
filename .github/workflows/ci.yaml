@@ -149,6 +149,9 @@ jobs:
           fetch-depth: 0
           ssh-key: '${{ secrets.DEPLOY_KEY }}'
 
+      - name: Set git user
+        uses: fregante/setup-git-user@v2
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 

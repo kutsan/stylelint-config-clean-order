@@ -1,2 +1,5 @@
 onlyBuiltDependencies:
   - esbuild
+
+patchedDependencies:
+  '@semantic-release/git': patches/@semantic-release__git.patch

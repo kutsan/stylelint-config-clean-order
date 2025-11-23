@@ -44,6 +44,8 @@
     "@kutsan/eslint-config": "^1.4.0",
     "@kutsan/prettier-config": "^1.1.0",
     "@kutsan/typescript-config": "^1.3.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@trivago/prettier-plugin-sort-imports": "^6.0.0",
     "@types/node": "^24.10.1",
     "csstype": "^3.2.3",
@@ -53,6 +55,7 @@
     "prettier": "^3.6.2",
     "prettier-plugin-packagejson": "^2.5.19",
     "rimraf": "^6.1.2",
+    "semantic-release": "^25.0.2",
     "stylelint": "^16.26.0",
     "stylelint-order": "^7.0.0",
     "vitest": "^4.0.13"

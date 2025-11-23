@@ -147,6 +147,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ssh-key: '${{ secrets.DEPLOY_KEY }}'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -175,8 +176,8 @@ jobs:
         run: |
           npm audit signatures
 
-      - name: Publish to npm
+      - name: Create a release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm exec -- semantic-release
+          pnpm exec -- semantic-release

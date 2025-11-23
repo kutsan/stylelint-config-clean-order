@@ -30,7 +30,7 @@
     "prebuild": "pnpm run clean",
     "build": "tsc --project tsconfig.build.json",
     "check": "pnpm run check:lint && pnpm run check:types && pnpm run check:format",
-    "check:format": "prettier --ignore-path .gitignore --check .",
+    "check:format": "prettier --check .",
     "check:lint": "eslint --max-warnings=0",
     "check:types": "tsc",
     "clean": "rimraf ./dist",

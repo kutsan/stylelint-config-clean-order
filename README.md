@@ -34,9 +34,10 @@ That's it! Now your styles will be ordered! You can use `stylelint --fix` comman
 
 Default severity level is `warning` but you can use error variant to change severity level to `error`.
 
-```json
-{
-  "extends": ["stylelint-config-clean-order/error"]
+```js
+/** @type {import('stylelint').Config} */
+export default {
+  extends: ['stylelint-config-clean-order/error'],
 }
 ```
 

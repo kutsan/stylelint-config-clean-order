@@ -178,4 +178,4 @@ jobs:
 
       - name: Create a release
         run: |
-          pnpm exec -- semantic-release
+          pnpm exec -- semantic-release --repository-url "git@github.com:${{ github.repository }}.git"

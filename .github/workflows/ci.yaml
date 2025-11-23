@@ -177,7 +177,5 @@ jobs:
           npm audit signatures
 
       - name: Create a release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pnpm exec -- semantic-release

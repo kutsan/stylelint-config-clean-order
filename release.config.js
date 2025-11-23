@@ -1,6 +1,8 @@
 export default {
   branches: ['master'],
   plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     '@semantic-release/npm',
     [
@@ -9,8 +11,9 @@ export default {
         assets: ['package.json', 'CHANGELOG.md'],
         message:
           // eslint-disable-next-line no-template-curly-in-string -- Template string are required by `semantic-release`.
-          '${nextRelease.version}\n\n\nskip-checks: true',
+          'chore(release): ${nextRelease.version} [skip ci]',
       },
     ],
+    '@semantic-release/github',
   ],
 }

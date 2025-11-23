@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@semantic-release/git':
-    hash: 0604e712f6326561e7a307bce48a6395636c67642ec42729a8d5b56790f76412
-    path: patches/@semantic-release__git.patch
-
 importers:
 
   .:
@@ -33,7 +28,7 @@ importers:
         version: 6.0.3(semantic-release@25.0.2(typescript@5.9.3))
       '@semantic-release/git':
         specifier: ^10.0.1
-        version: 10.0.1(patch_hash=0604e712f6326561e7a307bce48a6395636c67642ec42729a8d5b56790f76412)(semantic-release@25.0.2(typescript@5.9.3))
+        version: 10.0.1(semantic-release@25.0.2(typescript@5.9.3))
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^6.0.0
         version: 6.0.0(prettier@3.6.2)
@@ -4174,7 +4169,7 @@ snapshots:
 
   '@semantic-release/error@4.0.0': {}
 
-  '@semantic-release/git@10.0.1(patch_hash=0604e712f6326561e7a307bce48a6395636c67642ec42729a8d5b56790f76412)(semantic-release@25.0.2(typescript@5.9.3))':
+  '@semantic-release/git@10.0.1(semantic-release@25.0.2(typescript@5.9.3))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0

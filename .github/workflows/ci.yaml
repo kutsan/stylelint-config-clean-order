@@ -149,9 +149,6 @@ jobs:
           fetch-depth: 0
           ssh-key: '${{ secrets.DEPLOY_KEY }}'
 
-      - name: Set git user
-        uses: fregante/setup-git-user@v2
-
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
@@ -180,5 +177,10 @@ jobs:
           npm audit signatures
 
       - name: Create a release
+        env:
+          GIT_AUTHOR_NAME: 'github-actions[bot]'
+          GIT_COMMITTER_NAME: 'github-actions[bot]'
+          GIT_AUTHOR_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
+          GIT_COMMITTER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
         run: |
           pnpm exec -- semantic-release --repository-url "git@github.com:${{ github.repository }}.git"

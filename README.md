@@ -5,11 +5,41 @@
 [![npm](https://img.shields.io/npm/v/stylelint-config-clean-order)](https://www.npmjs.com/package/stylelint-config-clean-order)
 [![ci](https://github.com/kutsan/stylelint-config-clean-order/actions/workflows/ci.yaml/badge.svg)](https://github.com/kutsan/stylelint-config-clean-order/actions/workflows/ci.yaml)
 
-Order your styles with [stylelint-order](https://github.com/hudochenkov/stylelint-order).
+Sort CSS properties into logical groups with [stylelint-order](https://github.com/hudochenkov/stylelint-order).
 
-| Before                                                                                                           | After                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| ![before](https://user-images.githubusercontent.com/10108377/173256557-88f5098b-dad7-4339-a571-6850ed82828f.png) | ![after](https://user-images.githubusercontent.com/10108377/173256556-e29e892a-2d21-437c-8093-a345d5de920e.png) |
+```css
+.card {
+  /* Interaction */
+  cursor: pointer;
+
+  /* Positioning */
+  position: relative;
+  z-index: 1;
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+
+  /* Box Model */
+  width: 100%;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+
+  /* Typography */
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+
+  /* Appearance */
+  opacity: 1;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-md);
+
+  /* Transition */
+  transition: transform var(--duration-fast);
+}
+```
 
 ## Usage
 
@@ -28,7 +58,7 @@ export default {
 }
 ```
 
-That's it! Now your styles will be ordered! You can use `stylelint --fix` command to automatically fix order issues.
+Run `stylelint --fix` to automatically sort properties.
 
 ## Severity Options
 
@@ -77,9 +107,19 @@ In addition to `stylelint-order` plugin, this package also overrides two rules (
 
 If you want these rules to put into effect, make sure config packages after `stylelint-config-clean-order` do not override them.
 
-## About orders
+## Property Order
 
-I try to hand-pick style orders in the most logical way to improve process of CSS refactoring; for example `font-size` before `line-height`, `display` before `align-items`. If you think order of a rule doesn't make sense, please open an issue so we can discuss. Thanks!
+Properties are organized into logical groups:
+
+1. **Interaction**: `cursor`, `pointer-events`, `user-select`, etc.
+2. **Positioning**: `position`, `z-index`, `top`, `right`, `bottom`, `left`, `transform`, etc.
+3. **Layout**: `display`, `flex`, `grid`, `gap`, `align-items`, `justify-content`, etc.
+4. **Box Model**: `width`, `height`, `margin`, `padding`, `border`, etc.
+5. **Typography**: `font-size`, `line-height`, `color`, `text-align`, etc.
+6. **Appearance**: `background`, `opacity`, `box-shadow`, `filter`, etc.
+7. **Transition**: `transition`, `animation`, etc.
+
+Within each group, properties are ordered logically (e.g., `font-size` before `line-height`, `display` before `align-items`). If you think a property order doesn't make sense, please open an issue.
 
 ## License
 

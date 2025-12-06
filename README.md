@@ -1,5 +1,3 @@
-<img width="100" src=".github/assets/logo.png" alt="Logo" />
-
 # stylelint-config-clean-order
 
 [![npm](https://img.shields.io/npm/v/stylelint-config-clean-order)](https://www.npmjs.com/package/stylelint-config-clean-order)
@@ -71,6 +69,20 @@ export default {
 }
 ```
 
+## Property Order
+
+Properties are organized into logical groups:
+
+1. **Interaction**: `cursor`, `pointer-events`, `user-select`, etc.
+2. **Positioning**: `position`, `z-index`, `top`, `right`, `bottom`, `left`, `transform`, etc.
+3. **Layout**: `display`, `flex`, `grid`, `gap`, `align-items`, `justify-content`, etc.
+4. **Box Model**: `width`, `height`, `margin`, `padding`, `border`, etc.
+5. **Typography**: `font-size`, `line-height`, `color`, `text-align`, etc.
+6. **Appearance**: `background`, `opacity`, `box-shadow`, `filter`, etc.
+7. **Transition**: `transition`, `animation`, etc.
+
+Within each group, properties are ordered logically (e.g., `font-size` before `line-height`, `display` before `align-items`). If you think a property order doesn't make sense, please open an issue.
+
 ## Customization
 
 You can import raw property groups to add or override rule options. Please refer to [stylelint-order](https://github.com/hudochenkov/stylelint-order) plugin documentation.
@@ -106,20 +118,6 @@ export default {
 In addition to `stylelint-order` plugin, this package also overrides two rules (`declaration-empty-line-before` and `at-rule-empty-line-before`) to improve the final formatted result by adding extra empty lines between declarations. `stylelint-config-clean-order` does not override a rule other than these two.
 
 If you want these rules to put into effect, make sure config packages after `stylelint-config-clean-order` do not override them.
-
-## Property Order
-
-Properties are organized into logical groups:
-
-1. **Interaction**: `cursor`, `pointer-events`, `user-select`, etc.
-2. **Positioning**: `position`, `z-index`, `top`, `right`, `bottom`, `left`, `transform`, etc.
-3. **Layout**: `display`, `flex`, `grid`, `gap`, `align-items`, `justify-content`, etc.
-4. **Box Model**: `width`, `height`, `margin`, `padding`, `border`, etc.
-5. **Typography**: `font-size`, `line-height`, `color`, `text-align`, etc.
-6. **Appearance**: `background`, `opacity`, `box-shadow`, `filter`, etc.
-7. **Transition**: `transition`, `animation`, etc.
-
-Within each group, properties are ordered logically (e.g., `font-size` before `line-height`, `display` before `align-items`). If you think a property order doesn't make sense, please open an issue.
 
 ## License
 

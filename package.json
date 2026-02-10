@@ -58,6 +58,7 @@
     "semantic-release": "^25.0.2",
     "stylelint": "^16.26.0",
     "stylelint-order": "^7.0.0",
+    "typescript": "^5.9.3",
     "vitest": "^4.0.13"
   },
   "peerDependencies": {

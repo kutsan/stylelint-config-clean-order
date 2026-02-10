@@ -1,3 +1,5 @@
+import order from 'stylelint-order'
+
 import { appearance } from './groups/appearance.ts'
 import { boxModel } from './groups/box-model.ts'
 import { interaction } from './groups/interaction.ts'
@@ -31,7 +33,7 @@ const EMPTY_LINE_MINIMUM_PROPERTY_THRESHOLD = 5
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- Let return type be inferred.
 export function getConfig({ severity }: { severity: 'error' | 'warning' }) {
   return {
-    plugins: ['stylelint-order'],
+    plugins: [order],
     rules: {
       'declaration-empty-line-before': [
         'always',

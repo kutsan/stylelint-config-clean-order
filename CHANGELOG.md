@@ -1,3 +1,10 @@
+## [8.0.1](https://github.com/kutsan/stylelint-config-clean-order/compare/v8.0.0...v8.0.1) (2026-02-10)
+
+
+### Bug Fixes
+
+* explicitly import stylelint-order package ([e0abdb5](https://github.com/kutsan/stylelint-config-clean-order/commit/e0abdb5bd789fd097b8e36c92b1621ea2af0042c))
+
 # [8.0.0](https://github.com/kutsan/stylelint-config-clean-order/compare/v7.2.2...v8.0.0) (2025-11-23)
 
 

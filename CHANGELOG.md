@@ -1,3 +1,10 @@
+## [8.0.2](https://github.com/kutsan/stylelint-config-clean-order/compare/v8.0.1...v8.0.2) (2026-05-19)
+
+
+### Bug Fixes
+
+* add `text-autospace` missing property ([e3de198](https://github.com/kutsan/stylelint-config-clean-order/commit/e3de198e8ac6b7a9e3ccd4a66e3b42b00ec73fca))
+
 ## [8.0.1](https://github.com/kutsan/stylelint-config-clean-order/compare/v8.0.0...v8.0.1) (2026-02-10)
 
 

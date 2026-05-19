@@ -31,6 +31,7 @@ export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
   'color',
   'text-align',
   'text-align-last',
+  'text-autospace',
   'text-emphasis',
   'text-emphasis-color',
   'text-emphasis-style',

@@ -113,7 +113,7 @@ export default {
 }
 ```
 
-## Extra empty lines for formatting
+## Extra Empty Lines for Formatting
 
 In addition to `stylelint-order` plugin, this package also overrides two rules (`declaration-empty-line-before` and `at-rule-empty-line-before`) to improve the final formatted result by adding extra empty lines between declarations. `stylelint-config-clean-order` does not override a rule other than these two.
 

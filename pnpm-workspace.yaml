@@ -1,2 +1,5 @@
-onlyBuiltDependencies:
-  - esbuild
+minimumReleaseAgeExclude:
+  - '@kutsan/*'
+
+allowBuilds:
+  esbuild: true

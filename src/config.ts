@@ -73,6 +73,7 @@ export function getConfig({ severity }: { severity: 'error' | 'warning' }) {
           'declarations',
           {
             type: 'rule',
+            // eslint-disable-next-line require-unicode-regexp -- /v RegExp flag is not supported in all environments yet.
             selector: /^&::[\w-]+/,
             hasBlock: true,
           },

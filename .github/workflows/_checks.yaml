@@ -1,0 +1,41 @@
+name: Checks
+
+on:
+  workflow_call: {}
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Run tests
+            command: test
+          - name: Lint code
+            command: check:lint
+          - name: Check types
+            command: check:types
+          - name: Check formatting
+            command: check:format
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26'
+
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile
+
+      - name: ${{ matrix.name }}
+        run: |
+          pnpm run ${{ matrix.command }}

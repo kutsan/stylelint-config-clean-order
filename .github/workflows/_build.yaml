@@ -1,0 +1,61 @@
+name: Build
+
+on:
+  workflow_call:
+    outputs:
+      artifact-name:
+        description: 'Name of the uploaded build artifact.'
+        value: ${{ jobs.build.outputs.artifact-name }}
+      build-output-pathname:
+        description: 'Build output directory relative to the workspace.'
+        value: ${{ jobs.build.outputs.build-output-pathname }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      artifact-name: ${{ steps.set-artifact-name.outputs.artifact-name }}
+      build-output-pathname: ${{ steps.set-build-output-pathname.outputs.build-output-pathname }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Set artifact name
+        id: set-artifact-name
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const shortSha = context.sha.substring(0, 7)
+            const artifactName = `build-${shortSha}`
+
+            core.setOutput('artifact-name', artifactName)
+
+      - name: Set build output pathname
+        id: set-build-output-pathname
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const buildOutputPathname = 'dist'
+            core.setOutput('build-output-pathname', buildOutputPathname)
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ steps.set-artifact-name.outputs.artifact-name }}
+          path: ${{ github.workspace }}/${{ steps.set-build-output-pathname.outputs.build-output-pathname }}/

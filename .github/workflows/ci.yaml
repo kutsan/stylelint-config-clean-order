@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
   pull_request:
     branches:
       - '*'
@@ -26,7 +26,7 @@ jobs:
         with:
           script: |
             const isPush = context.eventName === 'push'
-            const isMain = context.ref === 'refs/heads/master'
+            const isMain = context.ref === 'refs/heads/main'
 
             let environment = 'preview'
 
@@ -36,6 +36,57 @@ jobs:
 
             console.log(`Environment resolved to "${environment}".`)
             core.setOutput('environment', environment)
+
+  commitlint:
+    name: commitlint
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint commit messages
+        run: pnpm dlx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+  changeset:
+    name: changeset
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.event.pull_request.base.ref }} --depth=1
+
+      - name: Verify changeset exists
+        run: pnpm exec changeset status --since=origin/${{ github.event.pull_request.base.ref }}
 
   checks:
     runs-on: ubuntu-latest
@@ -56,16 +107,15 @@ jobs:
             command: check:format
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 'lts/*'
-          cache: 'pnpm'
 
       - name: Install dependencies
         run: |
@@ -88,16 +138,13 @@ jobs:
       build-output-pathname: ${{ steps.set-build-output-pathname.outputs.build-output-pathname }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Set up Node
         uses: actions/setup-node@v6
-        with:
-          node-version: 'lts/*'
-          cache: 'pnpm'
 
       - name: Install dependencies
         run: |
@@ -144,19 +191,18 @@ jobs:
       pull-requests: write # To be able to comment on released pull requests.
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           ssh-key: '${{ secrets.DEPLOY_KEY }}'
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
           node-version: 'lts/*'
-          cache: 'pnpm'
 
       - name: Install dependencies
         run: |

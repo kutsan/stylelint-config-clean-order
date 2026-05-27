@@ -47,7 +47,7 @@ Install [`stylelint`](https://github.com/stylelint/stylelint), this config packa
 npm add --save-dev stylelint stylelint-order stylelint-config-clean-order
 ```
 
-Configure your stylelint configuration file (`stylelint.config.js`) to extend this package:
+Configure your `stylelint` configuration file (`stylelint.config.js`) to extend this package:
 
 ```js
 /** @type {import('stylelint').Config} */

@@ -1,3 +1,15 @@
+# [9.0.0](https://github.com/kutsan/stylelint-config-clean-order/compare/v8.0.2...v9.0.0) (2026-05-27)
+
+
+### Features
+
+* update README to fix title ([b56bc55](https://github.com/kutsan/stylelint-config-clean-order/commit/b56bc55fb64dbaba374ffa2fb12ce108adc2dbf7))
+
+
+### BREAKING CHANGES
+
+* `top`, `right`, `bottom`, and `left` properties are now reordered after the logical `inset` properties.
+
 ## [8.0.2](https://github.com/kutsan/stylelint-config-clean-order/compare/v8.0.1...v8.0.2) (2026-05-19)
 
 

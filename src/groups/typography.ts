@@ -1,6 +1,10 @@
 import type * as CSS from 'csstype'
 
-export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
+type UnknownTypographyProperties = 'text-stroke-width' | 'text-stroke-color'
+
+export const typography: Array<
+  keyof CSS.StandardPropertiesHyphen | UnknownTypographyProperties
+> = [
   'writing-mode',
   'font',
   'font-family',
@@ -17,6 +21,7 @@ export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
   'font-variant-numeric',
   'font-variant-east-asian',
   'font-variant-position',
+  'font-variant-emoji',
   'font-size-adjust',
   'font-smooth',
   'font-palette',
@@ -25,6 +30,7 @@ export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
   'font-synthesis-style',
   'font-synthesis-small-caps',
   'font-kerning',
+  'font-language-override',
   'ruby-position',
   'line-height',
   'hyphens',
@@ -32,6 +38,7 @@ export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
   'text-align',
   'text-align-last',
   'text-autospace',
+  'text-spacing-trim',
   'text-emphasis',
   'text-emphasis-color',
   'text-emphasis-style',
@@ -44,17 +51,20 @@ export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
   'text-decoration-skip-ink',
   'text-underline-position',
   'text-underline-offset',
+  'text-stroke-width',
+  'text-stroke-color',
   'text-indent',
   'text-justify',
   'text-overflow',
   'text-shadow',
   'text-transform',
   'text-wrap',
+  'text-wrap-mode',
+  'text-wrap-style',
   'text-size-adjust',
   'text-combine-upright',
   'text-orientation',
   'text-rendering',
-  'stroke-color',
   'letter-spacing',
   'word-break',
   'word-spacing',
@@ -70,8 +80,6 @@ export const typography: Array<keyof CSS.StandardPropertiesHyphen> = [
   'list-style-position',
   'list-style-type',
   'list-style-image',
-  'text-wrap-mode',
-  'text-wrap-style',
   'initial-letter',
   'initial-letter-align',
   'ruby-align',

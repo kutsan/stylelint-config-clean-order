@@ -24,6 +24,7 @@ export const svgPresentation: Array<keyof CSS.PropertiesHyphen> = [
   'stroke-linecap',
   'stroke-linejoin',
   'stroke-miterlimit',
+  'stroke-color',
   'stroke-opacity',
   'stroke-width',
   'vector-effect',

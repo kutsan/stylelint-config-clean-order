@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-clean-order",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Order your styles with stylelint-order.",
   "keywords": [
     "stylelint",

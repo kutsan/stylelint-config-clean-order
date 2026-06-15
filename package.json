@@ -9,9 +9,13 @@
     "property order",
     "css order"
   ],
+  "homepage": "https://github.com/kutsan/stylelint-config-clean-order#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kutsan/stylelint-config-clean-order.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kutsan/stylelint-config-clean-order/issues"
   },
   "license": "MIT",
   "author": "Kutsan Kaplan <me@kutsan.dev> (https://kutsan.dev)",

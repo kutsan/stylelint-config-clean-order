@@ -9,6 +9,10 @@
     "property order",
     "css order"
   ],
+  "homepage": "https://github.com/kutsan/stylelint-config-clean-order#readme",
+  "bugs": {
+    "url": "https://github.com/kutsan/stylelint-config-clean-order/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kutsan/stylelint-config-clean-order.git"

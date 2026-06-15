@@ -86,5 +86,9 @@
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "homepage": "https://github.com/kutsan/stylelint-config-clean-order",
+  "bugs": {
+    "url": "https://github.com/kutsan/stylelint-config-clean-order/issues"
   }
 }

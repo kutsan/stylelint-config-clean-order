@@ -43,7 +43,7 @@ jobs:
           path: ${{ github.workspace }}/${{ needs.build.outputs.build-output-pathname }}
 
       - name: Create release PR or publish
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
           version: pnpm run version
           publish: pnpm run release
